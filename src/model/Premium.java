@@ -22,17 +22,48 @@ public class Premium extends Consumer{
      * @param name :String. Name of the playlist
      * @return message:String. A message about the result of the process.
      */
-    public String addPlaylist(String name){
+    public String addPlaylist(String name, int id){
         String message="";
         boolean stop = false;
         for (int i = 0;i<playlists.size() && !stop; i++){
-            playlists.add(new Playlist(name));
+            playlists.add(new Playlist(name, id));
             message="Playlist created successfully";
             stop = true;
             }
         return message;
     }
 
+    public String sharePlaylist(int playlistPosition) {
+        return playlists.get(playlistPosition).generateMatrix();
+    }
+
+    public String showPlaylist(){
+        String message = "";
+        for (int i = 0; i< playlists.size(); i++){
+            message  += (i+". "+ playlists.get(i).getName()+"\n");
+        }
+        return message;
+    }
+
+    public Playlist searchPosition(int index){
+        Playlist obj=null;
+        boolean confirm= false;
+        for(int i=0; i<playlists.size() && !confirm; i++){
+            if(playlists.get(i)==playlists.get(index)){
+                obj=playlists.get(i);
+                confirm=true;
+            }   
+        } 
+        return obj;
+    }
+
+    public boolean addAudioToPlaylist(int playlistChosen, Audio newPlaylistSong) {
+        return playlists.get(playlistChosen).addAudios(newPlaylistSong);
+    }
+
+    public boolean removeAudioToPlaylist(int playlistChosen, int badPlaylistSong) {
+        return playlists.get(playlistChosen).removeAudios(badPlaylistSong);
+    }
     /**
      * A method that collect premium user (consumer) information.
      * @return message: String. The data compiled of the user.

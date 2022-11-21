@@ -6,6 +6,7 @@ public class Producer extends User{
     //atributes
     private String name;
     private String url;
+    private int numVisualization;
     //methods
     /**
      * Constructor class's method Producer (User)
@@ -19,6 +20,7 @@ public class Producer extends User{
         super(nickname, cc, iniDate);
         this.name=name;
         this.url=url;
+        numVisualization=0;
     }
     /**
      * A method that collect producer user information.
@@ -29,7 +31,8 @@ public class Producer extends User{
         String message="";
         message=super.toString()+"\n"+
         name+"\n"+
-        url;
+        url+"\n"+
+        numVisualization;
         return message;
     }
     //Getters and Setters
@@ -48,6 +51,14 @@ public class Producer extends User{
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public int getNumVisualization() {
+        return numVisualization;
+    }
+
+    public void setNumVisualization(int numVisualization) {
+        this.numVisualization = numVisualization;
     }
 
 }

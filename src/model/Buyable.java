@@ -2,5 +2,5 @@ package model;
 
 public interface Buyable {
     //interface method
-    public void buySong();
+    public String buySong();
 }

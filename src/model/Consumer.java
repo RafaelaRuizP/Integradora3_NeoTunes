@@ -21,6 +21,8 @@ public class Consumer extends User{
         producerFav=null;
     }
 
+    
+
     /**
      * A method that collect consumer user information.
      * @return message: String. The data compiled of the user.
