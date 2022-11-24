@@ -246,7 +246,7 @@ public class Platform {
         System.out.println("Nombre de la playlist: ");
         String name= reader.nextLine();
         reader.nextLine();
-        System.out.println("Nombre de la playlist: ");
+        System.out.println("id de la playlist: ");
         int id= reader.nextInt();
         System.out.println(neoController.addPlaylist(name, cc, opcion, id));
     }
@@ -286,7 +286,7 @@ public class Platform {
                 System.out.println("Quitar un audio");
                 System.out.println(neoController.showAudiosPlaylist(optionU, answerPosition, indexPlay));
                 int answerAudio2 =reader.nextInt();
-                System.out.println(neoController.editPlaylist(name, optionU, opcion, indexPlay, answerPosition, audioIndex));
+                System.out.println(neoController.editPlaylist(name, optionU, opcion, indexPlay, answerPosition, answerAudio2));
             default:
                 break;
         }
@@ -296,6 +296,10 @@ public class Platform {
         int optionU = reader.nextInt();
         System.out.println(neoController.showStandarOrPremium(optionU));
         int answerPosition= reader.nextInt();
+        System.out.println("Selecciona la playlist: ");
+        System.out.println(neoController.showPlaylist(optionU, answerPosition));
+        int playlistPosition = reader.nextInt();
+        System.out.println(neoController.sharePlaylist(answerPosition, playlistPosition, optionU));
     }
     public void simulateReproduction(){
         String message = "";
