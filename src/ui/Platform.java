@@ -338,10 +338,12 @@ public class Platform {
     public void mostCommonGenre(){
         System.out.println("Identificación de usuario:");
         String cc= reader.nextLine();
+        System.out.println(neoController.genreMoreListened());
     }
     public void mostCommonCategory(){
         System.out.println("Identificación de usuario:");
         String cc= reader.nextLine();
+        System.out.println(neoController.categoryMoreListened());
     }
 
     public void top5Producers(){
